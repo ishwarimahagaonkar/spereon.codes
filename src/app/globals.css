@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Keep the application hidden until the client-side splash sequence finishes.
+   (Must live after @import — CSS ignores imports that follow other rules.) */
+body.splash-pending {
+  background: #112250;
+  overflow: hidden;
+}
+
+body.splash-pending .site-content {
+  visibility: hidden;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --card: #ffffff;
+  --line: #e2e8f0;
+  --nav-bg: rgba(248, 250, 252, 0.8);
+}
+
+.dark {
+  --background: #081120;
+  --foreground: #f1f5f9;
+  --muted: #94a3b8;
+  --card: #0d1b33;
+  --line: #1e2c4a;
+  --nav-bg: rgba(8, 17, 32, 0.8);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-primary: #112250;
+  --color-secondary: #274690;
+  --color-accent: #4f7fff;
+  --color-success: #10b981;
+  --color-navy: #081120;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #4f7fff;
+  color: #ffffff;
+}
+
+/* ---- Reusable primitives ---- */
+
+.container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 76rem;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-site {
+    padding-inline: 2rem;
+  }
+}
+
+.heading-gradient {
+  background: linear-gradient(120deg, #112250 0%, #274690 45%, #4f7fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .heading-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #b9ccff 45%, #4f7fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  background: linear-gradient(120deg, #274690, #4f7fff);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  box-shadow: 0 10px 30px -10px rgba(79, 127, 255, 0.55);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+/* shimmer sweep */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  transform: translateX(-130%);
+  transition: transform 700ms ease;
+  pointer-events: none;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(130%);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px -12px rgba(79, 127, 255, 0.65);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--foreground);
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  border-color: #4f7fff;
+  box-shadow: 0 10px 30px -14px rgba(15, 23, 42, 0.25);
+}
+
+.card-surface {
+  border-radius: 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--card);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -16px rgba(15, 23, 42, 0.08);
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(79, 127, 255, 0.45);
+  box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04), 0 24px 48px -20px rgba(17, 34, 80, 0.25);
+}
+
+/* ---- Floating gradient blobs ---- */
+
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -50px) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.94);
+  }
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: blob-float 14s ease-in-out infinite;
+}
+
+.dark .blob {
+  opacity: 0.35;
+}
+
+/* ---- Pulsing glow (CTA) ---- */
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.12);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* ---- Marquee for logos ---- */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .blob,
+  .marquee-track,
+  .glow-pulse {
+    animation: none;
+  }
+  .btn-primary::after {
+    transition: none;
+    transform: translateX(-130%);
+  }
+}
