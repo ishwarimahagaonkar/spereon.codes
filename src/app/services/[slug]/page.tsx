@@ -69,9 +69,6 @@ export default async function ServicePage({
               <Link href="/contact" className="btn-primary text-sm">
                 Book Free Consultation <ArrowRight size={16} />
               </Link>
-              <Link href="/pricing" className="btn-secondary text-sm">
-                View Pricing
-              </Link>
             </div>
           </Reveal>
         </div>
