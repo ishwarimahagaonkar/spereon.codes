@@ -30,7 +30,6 @@ const fadeUp = {
 };
 
 const resourceLinks = [
-  { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Insights" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms & Conditions" },
@@ -230,3 +229,4 @@ export function Footer() {
     </footer>
   );
 }
+

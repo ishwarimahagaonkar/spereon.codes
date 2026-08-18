@@ -11,7 +11,6 @@ import { ThemeToggle } from "@/components/theme-toggle";
 const links = [
   // { href: "/services", label: "Services" },
   { href: "/products", label: "Products" },
-  { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
   // { href: "/careers", label: "Careers" }, // re-enable when hiring opens
   { href: "/contact", label: "Contact" },
@@ -135,3 +134,4 @@ export function Navbar() {
     </header>
   );
 }
+
