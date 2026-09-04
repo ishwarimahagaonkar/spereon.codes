@@ -312,7 +312,7 @@ export const products: Product[] = [
     features: [
       "Geolocation attendance & selfie check-in",
       "Leave management with approval flows",
-      "Automated payroll & salary slips",
+      "Attendance & CRM Reports",
       "Travel & expense tracking",
       "Holiday calendars & shift settings",
       "Reports, exports & multi-company support",
