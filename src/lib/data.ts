@@ -663,8 +663,8 @@ export const blogPosts: BlogPost[] = [
 
 export const siteConfig = {
   name: "Spereon.codes",
-  email: "info@spereon.codes",
-  phone: "+91 87933 20820",
+  email: "spereon.code@gmail.com",
+  phone: "+91 8432333377",
   address: "Pune, Maharashtra, India",
   social: {
     linkedin: "https://linkedin.com/company/spereon",
