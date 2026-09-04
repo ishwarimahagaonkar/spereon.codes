@@ -8,6 +8,7 @@ import { Hero } from "@/components/sections/hero";
 // import { Testimonials } from "@/components/sections/testimonials";
 // import { Faq } from "@/components/sections/faq";
 import { FeaturedProducts } from "@/components/sections/featured-products";
+import { Departments } from "@/components/sections/departments";
 import { Stats } from "@/components/sections/stats";
 import { Cta } from "@/components/sections/cta";
 
@@ -20,6 +21,7 @@ export default function Home() {
       {/* <WhyChoose /> */}
       {/* <Process /> */}
       <FeaturedProducts />
+      <Departments />
       {/* <TechStack /> */}
       <Stats />
       {/* <Testimonials /> */}

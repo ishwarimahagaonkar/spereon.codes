@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     // "/services",
     "/products",
-    "/pricing",
     "/about",
     "/blog",
     "/contact",
@@ -44,3 +43,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [...staticPages, ...servicePages, ...productPages, ...blogPages];
 }
+

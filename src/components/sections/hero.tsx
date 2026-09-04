@@ -55,7 +55,7 @@ export function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-secondary dark:text-accent"
         >
           <Sparkles size={15} />
-          SaaS · Mobile Apps 
+           · Mobile Apps 
         </motion.div>
 
         <h1 className="font-display max-w-4xl text-4xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">

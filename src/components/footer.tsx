@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import {
-  GithubIcon,
+  FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
   TwitterIcon,
@@ -92,7 +92,7 @@ export function Footer() {
               {[
                 { icon: LinkedinIcon, href: siteConfig.social.linkedin, label: "LinkedIn" },
                 { icon: TwitterIcon, href: siteConfig.social.twitter, label: "Twitter" },
-                { icon: GithubIcon, href: siteConfig.social.github, label: "GitHub" },
+                { icon: FacebookIcon, href: siteConfig.social.facebook, label: "Facebook" },
                 { icon: InstagramIcon, href: siteConfig.social.instagram, label: "Instagram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
