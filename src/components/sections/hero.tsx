@@ -122,10 +122,6 @@ export function Hero() {
             consultation
           </span>
           <span className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-success" /> Transparent,
-            milestone-based pricing
-          </span>
-          <span className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-success" /> Support after
             launch
           </span>

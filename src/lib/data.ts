@@ -543,56 +543,6 @@ export const trustedBy = [
   "AgroLink",
 ];
 
-export const pricingPlans = [
-  {
-    name: "Starter",
-    price: "$2,900",
-    unit: "starting at",
-    desc: "For startups validating an idea with a focused MVP.",
-    features: [
-      "MVP scoped in 1 discovery workshop",
-      "UI/UX design included",
-      "Web or mobile app",
-      "4–8 week delivery",
-      "30 days post-launch support",
-    ],
-    highlighted: false,
-    cta: "Start Your MVP",
-  },
-  {
-    name: "Growth",
-    price: "$7,900",
-    unit: "starting at",
-    desc: "For businesses building a full product or platform.",
-    features: [
-      "Full product design & development",
-      "Web + mobile applications",
-      "API & integrations",
-      "Cloud deployment & CI/CD",
-      "90 days post-launch support",
-      "Dedicated project manager",
-    ],
-    highlighted: true,
-    cta: "Plan Your Product",
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    unit: "tailored quote",
-    desc: "For ERP, HRMS, and large-scale custom systems.",
-    features: [
-      "Custom ERP / HRMS / SaaS platforms",
-      "Multi-team development",
-      "Security & compliance reviews",
-      "SLA-backed support",
-      "On-going enhancement roadmap",
-      "Priority response times",
-    ],
-    highlighted: false,
-    cta: "Talk to Us",
-  },
-];
-
 export const jobs = [
   {
     title: "Full-Stack Developer (React / Node.js)",
@@ -663,7 +613,7 @@ export const blogPosts: BlogPost[] = [
 
 export const siteConfig = {
   name: "Spereon.codes",
-  email: "spereon.code@gmail.com",
+  email: "info@spereon.codes",
   phone: "+91 8432333377",
   address: "Pune, Maharashtra, India",
   social: {
